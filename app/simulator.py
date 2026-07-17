@@ -5,6 +5,7 @@ import threading
 import time
 
 import paho.mqtt.client as mqtt
+import ssl
 
 from app.config import (
     MQTT_BROKER,

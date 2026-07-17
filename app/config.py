@@ -3,12 +3,12 @@
 # =====================
 # MQTT CONFIG
 # =====================
+import os
 
-MQTT_BROKER = "localhost"
-MQTT_PORT = 1883
-MQTT_USERNAME = "dro"
-MQTT_PASSWORD = "gxuvimr"
-
+MQTT_BROKER = os.getenv("MQTT_BROKER")
+MQTT_PORT = int(os.getenv("MQTT_PORT", "8883"))
+MQTT_USERNAME = os.getenv("MQTT_USERNAME")
+MQTT_PASSWORD = os.getenv("MQTT_PASSWORD")
 COMMAND_TOPIC = "drone"
 BATTLE_COMMAND_TOPIC = "battle/drone"
 
