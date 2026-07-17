@@ -51,11 +51,13 @@ for drone_id, drone in BATTLE_DRONES.items():
 # MQTT CALLBACKS
 # =====================
 
-def on_connect(client, userdata, flags, rc):
-    print("[MQTT] Connected")
-
-    client.subscribe(COMMAND_TOPIC)
-    client.subscribe(BATTLE_COMMAND_TOPIC)
+def on_connect(client, userdata, flags, rc, properties=None):
+    if rc == 0:
+        print("[MQTT] Connected")
+        client.subscribe(COMMAND_TOPIC)
+        client.subscribe(BATTLE_COMMAND_TOPIC)
+    else:
+        print(f"[MQTT] Connection failed with code {rc}")
 
 
 def on_message(client, userdata, msg):
@@ -152,6 +154,7 @@ def start_simulator():
         MQTT_USERNAME,
         MQTT_PASSWORD,
     )
+    client.tls_set(cert_reqs=ssl.CERT_REQUIRED)
 
     client.on_connect = on_connect
     client.on_message = on_message
