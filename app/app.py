@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from simulator import start_simulator
+from app.simulator import start_simulator
 
 
 @asynccontextmanager

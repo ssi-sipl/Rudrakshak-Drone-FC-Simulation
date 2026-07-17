@@ -6,7 +6,7 @@ import time
 
 import paho.mqtt.client as mqtt
 
-from config import (
+from app.config import (
     MQTT_BROKER,
     MQTT_PORT,
     MQTT_USERNAME,
@@ -19,7 +19,7 @@ from config import (
     BATTLE_DRONES,
 )
 
-from drone import DroneFC
+from app.drone import DroneFC
 
 
 # =====================
