@@ -1,1 +1,30 @@
-/venv   
+# Virtual Environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
