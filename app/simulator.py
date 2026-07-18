@@ -105,6 +105,7 @@ def telemetry_loop(client):
             drone.tick()
 
             topic = f"drones/{drone.id}/telemetry"
+            print(f"Publishing -> {topic}")
 
             client.publish(
                 topic,
